@@ -21,7 +21,8 @@ Comments.init(
         },
         date: {
             type: DataTypes.DATE,
-            allowNull: false
+            allowNull: false,
+            defaultValue: DataTypes.NOW
         },
         post_id:{
             type: DataTypes.INTEGER,
@@ -36,7 +37,7 @@ Comments.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'posts'
+        modelName: 'comments'
     }
 )
 
