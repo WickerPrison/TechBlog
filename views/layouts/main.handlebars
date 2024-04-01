@@ -8,9 +8,14 @@
 
   <body>
     <header>
-      <a>Home</a>
+      <a href="/">Home</a>
       <a>Dashboard</a>
-      <a>Login</a>
+      {{log logged_in}}
+      {{#if logged_in}}
+      <a>Logout</a>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
       <h1>Tech Blog</h1>
     </header>
     <div id="body-container">

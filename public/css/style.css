@@ -25,6 +25,8 @@ header a{
     color: var(--blue);
     font-size: 2em;
     margin: 0 1em;
+    user-select: none;
+    text-decoration: none;
 }
 
 header a:hover{
@@ -71,4 +73,43 @@ h1{
     float: right;
     color: var(--blue);
     margin: 0;
+}
+
+.login-window{
+    width: 80%;
+    margin: 2.5em auto;
+    background-color: var(--mainIndigo);
+    color: var(--blue);
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 15px;
+    max-width: 35em;
+}
+
+.login-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-section input{
+    margin: auto 0 auto 1em;
+    height: 1em;
+    font-size: 1.5em;
+}
+
+.login-section button{
+    background-color: var(--blue);
+    color: var(--mainIndigo);
+    font-size: 1.5em;
+    margin: 0.5em auto;
+}
+
+.login-section button:hover{
+    cursor: pointer;
+    color: var(--pink);
 }
