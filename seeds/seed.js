@@ -12,7 +12,10 @@ const seedDatabase = async () => {
 
   await Comments.bulkCreate(commentsData);
 
-  await Users.bulkCreate(usersData);
+  await Users.bulkCreate(usersData, {
+    individualHooks: true,
+    returning: true
+  });
 
   console.log("Database Seeded");
 

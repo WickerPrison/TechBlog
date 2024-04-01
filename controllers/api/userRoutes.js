@@ -3,6 +3,7 @@ const {Comments, Posts, Users} = require('../../models');
 
 router.post('/login', async (req, res) => {
     try {
+        console.log(req.body);
       const userData = await Users.findOne(
         { 
             where: { name: req.body.name } 
@@ -15,14 +16,15 @@ router.post('/login', async (req, res) => {
         return;
       }
   
-    //   const validPassword = await userData.checkPassword(req.body.password);
+      const validPassword = await userData.checkPassword(req.body.password);
+      console.log(validPassword);
   
-    //   if (!validPassword) {
-    //     res
-    //       .status(400)
-    //       .json({ message: 'Incorrect email or password, please try again' });
-    //     return;
-    //   }
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password, please try again' });
+        return;
+      }
   
       req.session.save(() => {
         req.session.user_id = userData.id;
