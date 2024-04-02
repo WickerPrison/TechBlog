@@ -10,14 +10,13 @@ const submit = async (e) => {
             method: 'POST',
             body: JSON.stringify({
                 content: content,
-                post_id: post_id,
-                name: sessionStorage.getItem("username")
+                post_id: post_id
             }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if(response.ok){
-            document.location.replace('/');
+            document.location.replace(`/posts/${post_id}`);
         }
         else{
             alert(response.statusText);

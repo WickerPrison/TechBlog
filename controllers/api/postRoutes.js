@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Comments, Posts} = require('../../models');
+const {Comments, Posts, Users} = require('../../models');
 
 router.get('/', async (req, res) => {
     const posts = await Posts.findAll({include: {model: Comments}}).catch((err) =>{
@@ -20,6 +20,11 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const userData = await Users.findByPk(req.session.user_id);
+    const user = userData.get({plain: true});
+
+    req.body.username = user.name;
+
     const newPost = await Posts.create(req.body).catch((err) => {
         res.status(400).json(err);
     });

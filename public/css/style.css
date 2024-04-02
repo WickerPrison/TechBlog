@@ -171,3 +171,58 @@ h1{
     font-size: 1.1em;
     font-family: inherit;
 }
+
+#new-comment-button{
+    margin-bottom: 2em;
+}
+
+#new-post-button{
+    margin: 2em auto;
+}
+
+.input-holder{
+    display: flex;
+}
+
+.input-holder *{
+    margin: auto 0.5em;
+}
+
+.input-holder textarea{
+    flex-grow: 1;
+    font-family: inherit;
+}
+
+#title-text{
+    font-size: 1.5em;
+    background-color: var(--mainIndigo);
+    color: var(--blue);
+    height: 1.5em;
+}
+
+#content-text{
+    font-size: 1.1em;
+    background-color: var(--blue);
+    color:var(--mainIndigo);
+}
+
+.post-button{
+    margin: 0 auto;
+    background-color: var(--blue);
+    color: var(--mainIndigo);
+    border-radius: 10px;
+    padding: 0.7em;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    display: block;
+}
+
+.post-button:hover{
+    cursor: pointer;
+    color:var(--pink);
+}
+
+#new-post{
+    display: none;
+}

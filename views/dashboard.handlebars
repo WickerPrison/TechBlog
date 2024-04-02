@@ -1,0 +1,27 @@
+{{#each posts as |post|}}
+<a class="post-link" href="/posts/{{post.id}}">
+    <div class="post-container">
+        <div class="post-header">
+            <h2>{{post.title}}</h2>
+            <p>Posted by {{post.username}} on {{post.date}}</p>
+        </div>
+        <p>{{post.content}}</p>
+    </div>
+</a>
+{{/each}}
+
+<button id="new-post-button" class="comment-button">+ New Post</button>
+
+<div class="post-container" id="new-post">
+    <div class="post-header input-holder">
+        <h2>Title: </h2>
+        <textarea id="title-text"></textarea>
+        <button id="submit-post" class="post-button">Submit</button>
+    </div>
+    <div class="input-holder">
+        <p>Content:</p>
+        <textarea id="content-text"></textarea>
+    </div>
+</div>
+
+<script src="/js/post.js"></script>
