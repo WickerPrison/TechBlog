@@ -135,3 +135,39 @@ h1{
     cursor: pointer;
     color: var(--pink);
 }
+
+.comment-button{
+    margin: 0 auto;
+    background-color: var(--mainIndigo);
+    color: var(--blue);
+    border-radius: 10px;
+    padding: 0.7em;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    display: block;
+}
+
+.comment-button:hover{
+    cursor: pointer;
+    color:var(--pink);
+}
+
+#submit-comment{
+    margin: auto 1em;
+    display: block;
+}
+
+#new-comment{
+    display: none;
+    justify-content: space-around;
+}
+
+#new-comment textarea{
+    flex-grow: 1;
+    background-color: var(--blue);
+    border: none;
+    color: var(--mainIndigo);
+    font-size: 1.1em;
+    font-family: inherit;
+}

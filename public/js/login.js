@@ -2,6 +2,7 @@ const login = async (e) => {
     e.preventDefault();
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
+    console.log(password);
     if(username && password){
         const response = await fetch('/api/users/login', {
             method: 'POST',

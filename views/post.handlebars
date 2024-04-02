@@ -12,3 +12,15 @@
     <p>{{comment.content}}</p>
 </div>
 {{/each}}
+
+<button id="new-comment-button" class="comment-button">+ New Comment</button>
+
+<div id="new-comment" class="post-container">
+    <p>New Comment:</p>
+    <textarea id="new-comment-text"></textarea>
+    <button id="submit-comment" class="comment-button">Submit</button>
+</div>
+
+<div id="post-data" class="{{post.id}}" style="display:none"></div>
+
+<script src="/js/comment.js"></script>
