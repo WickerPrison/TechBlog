@@ -13,10 +13,17 @@ const submit = async (e) => {
                 post_id: post_id
             }),
             headers: { 'Content-Type': 'application/json' }
+        }).catch((err) => {
+            response.json(err);
         });
 
         if(response.ok){
-            document.location.replace(`/posts/${post_id}`);
+            if(response.redirected){
+                document.location.replace(response.url);
+            }
+            else{
+                document.location.replace(`/posts/${post_id}`);
+            }
         }
         else{
             alert(response.statusText);

@@ -12,7 +12,7 @@ router.get('/', async (req,res) => {
     logged_in: req.session.logged_in});
 });
 
-router.get('/posts/:id', withAuth, async (req,res) => {
+router.get('/posts/:id', async (req,res) => {
     const postData = await Posts.findOne({
         where: {id: req.params.id}
     }).catch((err) => {
