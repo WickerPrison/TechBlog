@@ -45,12 +45,24 @@ h1{
     display: block;
 }
 
+.post-link{
+    text-decoration: none;
+}
+
 .post-container{
     margin: 2em auto;
     width: 90%;
     border: var(--mainIndigo) 0.3em solid;
     border-radius: 15px;
-    box-shadow: 0 0 10px 1px;
+    box-shadow: 0 0 5px 1px black;
+}
+
+.post-link:hover{
+    cursor: pointer;
+}
+
+.post-link:hover .post-header *{
+    color: var(--pink);
 }
 
 .post-container p{
