@@ -96,6 +96,16 @@ h1{
     box-sizing: border-box;
 }
 
+.login-section a{
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.login-section a:hover{
+    cursor: pointer;
+    color: var(--pink);
+}
+
 .login-section input{
     margin: auto 0 auto 1em;
     height: 1em;

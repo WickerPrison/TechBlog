@@ -1,9 +1,9 @@
-const login = async (e) => {
+const signUp = async (e) => {
     e.preventDefault();
-    const username = document.getElementById("login-username").value;
-    const password = document.getElementById("login-password").value;
+    const username = document.getElementById("sign-up-username").value;
+    const password = document.getElementById("sign-up-password").value;
     if(username && password){
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/users/signUp', {
             method: 'POST',
             body: JSON.stringify({
                 name: username,
@@ -21,4 +21,4 @@ const login = async (e) => {
     }
 }
 
-document.getElementById("login-button").addEventListener("click", login);
+document.getElementById("sign-up-button").addEventListener("click", signUp);

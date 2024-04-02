@@ -16,6 +16,10 @@ router.get('/login', async (req,res) => {
     res.render('login');
 });
 
+router.get('/signUp', async (req,res) => {
+    res.render('signUp');
+});
+
 router.get('/dashboard', withAuth, async (req,res) => {
     res.render('dashboard', {logged_in: req.session.logged_in});
 });

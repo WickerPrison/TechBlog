@@ -3,7 +3,6 @@ const {Comments, Posts, Users} = require('../../models');
 
 router.post('/login', async (req, res) => {
     try {
-        console.log(req.body);
       const userData = await Users.findOne(
         { 
             where: { name: req.body.name } 
@@ -26,9 +25,8 @@ router.post('/login', async (req, res) => {
       }
   
       req.session.save(() => {
-        req.session.user_id = userData.id;
+        req.session.user_id = userData.dataValues.id;
         req.session.logged_in = true;
-        console.log(req.session.logged_in);
         res.json({ user: userData, message: 'You are now logged in!' });
       });
   
@@ -49,5 +47,18 @@ router.post('/logout', (req,res) => {
     }
 });
 
+router.post('/signUp', async (req,res) => {
+  try{
+      const userData = await Users.create(req.body);
+    
+      req.session.save(() => {
+        req.session.user_id = userData.dataValues.id;
+        req.session.logged_in = true;
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
+  }catch{
+    res.status(400).json(err);
+  }
+})
 
 module.exports = router;
