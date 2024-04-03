@@ -188,19 +188,22 @@ h1{
     margin: auto 0.5em;
 }
 
-.input-holder textarea{
+.input-holder textarea,
+.input-holder .post-content{
     flex-grow: 1;
     font-family: inherit;
 }
 
-#title-text{
+#title-text,
+#update-title-text{
     font-size: 1.5em;
     background-color: var(--mainIndigo);
     color: var(--blue);
     height: 1.5em;
 }
 
-#content-text{
+#content-text,
+#update-content-text{
     font-size: 1.1em;
     background-color: var(--blue);
     color:var(--mainIndigo);
@@ -223,6 +226,7 @@ h1{
     color:var(--pink);
 }
 
-#new-post{
+#new-post,
+#update-post{
     display: none;
 }

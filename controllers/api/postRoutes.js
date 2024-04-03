@@ -10,14 +10,14 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const posts = await Posts.findOne(
+    const post = await Posts.findOne(
         {
             include: {model: Comments},
             where: {id: req.params.id}
         }).catch((err) =>{
         res.json(err);
     });
-    res.json(posts);
+    res.json(post);
 });
 
 router.post('/', withAuth, async (req, res) => {
