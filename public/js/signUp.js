@@ -2,6 +2,12 @@ const signUp = async (e) => {
     e.preventDefault();
     const username = document.getElementById("sign-up-username").value;
     const password = document.getElementById("sign-up-password").value;
+
+    if(password.length < 8){
+        alert("Password must contain at least 8 characters");
+        return;
+    }
+
     if(username && password){
         const response = await fetch('/api/users/signUp', {
             method: 'POST',
