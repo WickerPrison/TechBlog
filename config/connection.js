@@ -8,12 +8,11 @@ if (process.env.DB_URL) {
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
-    process.env.DB_PASSWORD,
     process.env.DB_USER,
+    process.env.DB_PASSWORD,
     {
-      host: 'dpg-co7bpmed3nmc73e7tu40-a',
-      dialect: 'postgres',
-      port:5432
+      host: 'localHost',
+      dialect: 'postgres'
     }
   );
 }
