@@ -11,9 +11,9 @@ if (process.env.DB_URL) {
     process.env.DB_PASSWORD,
     process.env.DB_USER,
     {
-      host: 'localhost',
+      host: 'dpg-co7bpmed3nmc73e7tu40-a',
       dialect: 'postgres',
-      port: 5432
+      port:5432
     }
   );
 }
