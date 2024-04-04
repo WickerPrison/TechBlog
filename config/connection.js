@@ -12,7 +12,8 @@ if (process.env.DB_URL) {
     process.env.DB_USER,
     {
       host: 'localhost',
-      dialect: 'postgres'
+      dialect: 'postgres',
+      port: 5432
     }
   );
 }
